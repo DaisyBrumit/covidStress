@@ -1,3 +1,7 @@
+# FEATURE EXPLORATION FOR COVID STRESS PROJECT
+# This script contains code for exploring the potential feature space of 
+# a new project through PCoA, regression, and various plots. 
+
 rm(list=ls())
 library(tidyverse)
 library(vegan)
