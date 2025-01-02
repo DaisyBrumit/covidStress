@@ -105,6 +105,15 @@ significant_results <- regression_results %>%
 # Print the significant features and their coefficients
 print(significant_results)
 
+# Let's make a bar chart!
+#write_csv(significant_results,'significant_features.csv') # will manually add categories
+significant_results <- read_csv('significant_features.csv')
+ggplot(significant_results, aes(x = feature, y = adj_r_squared, fill = category)) +
+  geom_bar(stat = "identity") + 
+  labs(y = "adjusted R squared") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 #### MAKE A LOADINGS PLOT ####
 # Calculate loadings for the features
 loadings <- scores(pcoa, display = "species")  # Extract feature scores (loadings)
